@@ -1,28 +1,43 @@
-.login {
+@value makerGreen,makerWhite,makerBlack from '../../base/color.css';
+.main {
+  width: 30em;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: makerWhite;
 }
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #3b5563;
+.title {
 }
-.logout {
-  position: absolute;
-  right: 42%;
+.list {
+  list-style: none;
+  padding: 0;
 }
-.loginarea {
-  background-color: white;
-  width: 17%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.google {
+  width: 90%;
+  background-color: makerWhite;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10em;
+  outline: none;
+  cursor: pointer;
 }
-.footer {
-  background-color: #3b5563;
+.github {
+  width: 90%;
+  background-color: makerWhite;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10em;
+  outline: none;
+  cursor: pointer;
+}
+
+.github:hover,
+.google:hover {
+  background-color: makerBlack;
+  color: makerWhite;
 }

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import "./app.css";
+import styles from "./app.module.css";
 import Login from "./components/login/login.jsx";
 
-function App() {
+function App({ authService }) {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
-    <>
-      <Login isLogin={isLogin} />
-    </>
+    <div className={styles.main}>
+      <Login authService={authService} />
+    </div>
   );
 }
 
