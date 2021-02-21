@@ -1,0 +1,28 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3b5563;
+}
+.logout {
+  position: absolute;
+  right: 42%;
+}
+.loginarea {
+  background-color: white;
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer {
+  background-color: #3b5563;
+}
