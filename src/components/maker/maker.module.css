@@ -1,0 +1,17 @@
+@value makerGreen,makerWhite,makerBlack from '../../base/color.css';
+
+.maker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1;
+  display: flex;
+}
+@media screen and (max-width: 50em) {
+  .container {
+    flex-direction: column;
+  }
+}

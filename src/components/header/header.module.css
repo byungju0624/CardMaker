@@ -23,5 +23,6 @@
   color: makerWhite;
   outline: 0;
   border: 0;
-  cursur: pointer;
+  cursor: pointer;
+  font-weight: bold;
 }
