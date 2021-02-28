@@ -1,5 +1,6 @@
 .preview {
   flex-basis: 50%;
+  background-color: white;
 }
 .title {
   width: 100%;
