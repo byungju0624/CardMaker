@@ -3,6 +3,7 @@
   background-color: white;
   padding: 0.5em 2em;
   border-right: 1px solid lightgray;
+  overflow-y: auto;
 }
 .title {
   width: 100%;

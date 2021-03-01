@@ -5,17 +5,28 @@ import Footer from "../footer/footer";
 import Header from "../header/header";
 import Preview from "../preview/preview";
 import styles from "./maker.module.css";
-const Maker = ({ authService, FileInput }) => {
+const Maker = ({ authService, FileInput, cardSave }) => {
   const [cards, setCards] = useState({});
-
+  const historyState = useHistory().state;
+  const [userId, setUserId] = useState(historyState && historyState.id);
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
   };
-
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = cardSave.syncCards(userId, (cards) => {
+      setCards(cards);
+    });
+    return () => stopSync();
+  }, [userId]);
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push("/");
       }
     });
@@ -27,6 +38,7 @@ const Maker = ({ authService, FileInput }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardSave.save(userId, card);
   };
   const deleteCard = (card) => {
     setCards((cards) => {
@@ -34,6 +46,7 @@ const Maker = ({ authService, FileInput }) => {
       delete updated[card.id];
       return updated;
     });
+    cardSave.remove(userId, card);
   };
 
   return (
