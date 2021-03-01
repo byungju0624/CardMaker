@@ -5,7 +5,6 @@ import Footer from "../footer/footer";
 import { useHistory } from "react-router";
 
 const Login = ({ onClick, isLogin, authService }) => {
-  console.log(authService);
   const history = useHistory();
   const goToMaker = (userId) => {
     history.push({

@@ -9,13 +9,13 @@ const Card = ({ card }) => {
     position,
     email,
     text,
-    fileName,
+
     fileUrl,
   } = card;
   const url = fileUrl || DEFAULT_IMAGE;
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
-      <img className={styles.avatar} src={url} alt="profile photo" />
+      <img className={styles.avatar} src={url} alt="myselfie" />
       <div className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
         <p className={styles.company}>{company}</p>
