@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ReactDOM from "react-dom";
 import "./index.module.css";
 import App from "./app";
@@ -9,9 +9,9 @@ import CardSave from "./source/card_save";
 const authService = new AuthService();
 const cardSave = new CardSave();
 const imageUploader = new ImageUploader();
-const FileInput = (props) => (
+const FileInput = memo((props) => (
   <ImageFileInput {...props} imageUploader={imageUploader} />
-);
+));
 ReactDOM.render(
   <React.StrictMode>
     <App authService={authService} FileInput={FileInput} cardSave={cardSave} />

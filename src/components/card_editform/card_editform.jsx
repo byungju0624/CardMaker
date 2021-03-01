@@ -24,7 +24,6 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       ...card,
       [e.currentTarget.name]: e.currentTarget.value,
     });
-    console.log(e.currentTarget.value);
   };
   return (
     <form className={styles.form}>
